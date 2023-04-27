@@ -1,1 +1,1 @@
-# RPC
+# RPC distributed network communication framework
