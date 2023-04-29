@@ -2,6 +2,9 @@ syntax = "proto3"; //声明protobuf的版本
 
 package fixbug;//声明了代码所在的包(对于C++而言是namespace)
 
+//表示生成service服务类和rpc方法描述，默认不生成
+option cc_generic_services = true;
+
 //定义登录请求消息类型 name pwd
 message LoginRequest 
 {
@@ -15,3 +18,29 @@ message LoginResponse
     string errmsg = 2;
     bool success = 3;
 }
+message User 
+{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Sex{
+        Man = 0;
+        WOMAN = 1;
+    }
+    Sex sex = 3;
+}
+//测试
+message test 
+{
+    //类成员变量
+    LoginResponse rsp = 1;
+    //User数组
+    repeated User friendList = 2;
+}
+
+//定义描述rpc方法的类型
+service UserServiceRpc{
+    rpc Login(LoginRequest) returns(LoginResponse);
+}
+
+
+
