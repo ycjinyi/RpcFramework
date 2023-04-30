@@ -3,11 +3,17 @@
 #include <string>
 #include <unistd.h>
 
+MprpcConfig MprpcApplication::_config;
+
 MprpcApplication::MprpcApplication() { }
 
 MprpcApplication* MprpcApplication::getInstance() {
     static MprpcApplication app;
     return &app;
+}
+
+MprpcConfig* MprpcApplication::getConfig() {
+    return &_config;
 }
 
 void showCommandHelp () {
@@ -19,7 +25,6 @@ void MprpcApplication::init(int argc, char** argv) {
         showCommandHelp();
         exit(0);
     }
-    
     char arg = 0;
     std::string configFile;
     //"i:"的意思是寻找-i选项，且必须携带参数
@@ -44,5 +49,9 @@ void MprpcApplication::init(int argc, char** argv) {
 
     //根据configFile配置文件加载配置
     //rpcServer: ip/port; zookeeper: ip/port;
-
+    _config.loadConfig(configFile);
+    // std::cout << "rpcserverip: " << _config.query("rpcserverip") << std::endl; 
+    // std::cout << "rpcserverport: " << _config.query("rpcserverport") << std::endl;
+    // std::cout << "zookeeperip: " << _config.query("zookeeperip") << std::endl;
+    // std::cout << "zookeeperport: " << _config.query("zookeeperport") << std::endl;
 }

@@ -129,12 +129,12 @@ src/clean: src/CMakeFiles/mprpc.dir/clean
 src/CMakeFiles/mprpc.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=1,2,3 "Built target mprpc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=1,2,3,4 "Built target mprpc"
 .PHONY : src/CMakeFiles/mprpc.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mprpc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mprpc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mprpc.dir/rule
@@ -155,12 +155,12 @@ src/CMakeFiles/mprpc.dir/clean:
 example/callee/CMakeFiles/provider.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=4,5,6 "Built target provider"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=5,6,7 "Built target provider"
 .PHONY : example/callee/CMakeFiles/provider.dir/all
 
 # Build rule for subdir invocation for target.
 example/callee/CMakeFiles/provider.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/provider.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 0
 .PHONY : example/callee/CMakeFiles/provider.dir/rule

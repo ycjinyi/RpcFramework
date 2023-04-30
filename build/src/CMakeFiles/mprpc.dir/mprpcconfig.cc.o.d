@@ -1,7 +1,6 @@
-src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: \
- /home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcapplication.cc \
+src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o: \
+ /home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcconfig.cc \
  /usr/include/stdc-predef.h \
- /home/ycjinyi/2023/mprpc/github/mprpc/src/include/mprpcapplication.hpp \
  /home/ycjinyi/2023/mprpc/github/mprpc/src/include/mprpcconfig.hpp \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/type_traits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -161,11 +160,8 @@ src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/fstream \
+ /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc

@@ -154,6 +154,30 @@ mprpcapplication.cc.s:
 	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cc.s
 .PHONY : mprpcapplication.cc.s
 
+mprpcconfig.o: mprpcconfig.cc.o
+.PHONY : mprpcconfig.o
+
+# target to build an object file
+mprpcconfig.cc.o:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o
+.PHONY : mprpcconfig.cc.o
+
+mprpcconfig.i: mprpcconfig.cc.i
+.PHONY : mprpcconfig.i
+
+# target to preprocess a source file
+mprpcconfig.cc.i:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.i
+.PHONY : mprpcconfig.cc.i
+
+mprpcconfig.s: mprpcconfig.cc.s
+.PHONY : mprpcconfig.s
+
+# target to generate assembly for a file
+mprpcconfig.cc.s:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.s
+.PHONY : mprpcconfig.cc.s
+
 rpcprovider.o: rpcprovider.cc.o
 .PHONY : rpcprovider.o
 
@@ -190,6 +214,9 @@ help:
 	@echo "... mprpcapplication.o"
 	@echo "... mprpcapplication.i"
 	@echo "... mprpcapplication.s"
+	@echo "... mprpcconfig.o"
+	@echo "... mprpcconfig.i"
+	@echo "... mprpcconfig.s"
 	@echo "... rpcprovider.o"
 	@echo "... rpcprovider.i"
 	@echo "... rpcprovider.s"

@@ -37,7 +37,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 14,
+				"line" : 17,
 				"parent" : 2
 			},
 			{
@@ -49,13 +49,13 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 11,
+				"line" : 14,
 				"parent" : 2
 			},
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 12,
+				"line" : 15,
 				"parent" : 2
 			}
 		]
@@ -119,12 +119,24 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "../../../lib/libmprpc.so",
+				"fragment" : "../../../lib/libmprpc.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
 				"fragment" : "-lprotobuf",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lmuduo_net",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lmuduo_base",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
 				"role" : "libraries"
 			}
 		],

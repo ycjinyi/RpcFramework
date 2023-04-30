@@ -1,12 +1,17 @@
 [
 {
   "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
-  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -fPIC -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcapplication.cc",
+  "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcapplication.cc",
   "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcapplication.cc"
 },
 {
   "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
-  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -fPIC -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/rpcprovider.cc",
+  "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcconfig.cc",
+  "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcconfig.cc"
+},
+{
+  "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
+  "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/rpcprovider.cc",
   "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/rpcprovider.cc"
 },
 {
