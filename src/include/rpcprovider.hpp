@@ -16,7 +16,7 @@ private:
     //用于保存service name对应的ServiceDescriptor
     //以及所有的method name和MethodDescriptor
     struct serviceInfo {
-        const google::protobuf::ServiceDescriptor* sdp;
+        google::protobuf::Service* service;
         std::unordered_map<std::string, 
             const google::protobuf::MethodDescriptor*> _methodMap;
     };
@@ -28,4 +28,7 @@ private:
     //消息回调函数
     void onMessage(const muduo::net::TcpConnectionPtr&, 
         muduo::net::Buffer*, muduo::Timestamp);
+    //rpc服务执行完毕后的回调函数
+    void rpcResponseCall(const muduo::net::TcpConnectionPtr& conn, 
+        google::protobuf::Message* msg);
 };

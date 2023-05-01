@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mprpc.dir/mprpcapplication.cc.o.d"
   "CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
   "CMakeFiles/mprpc.dir/mprpcconfig.cc.o.d"
+  "CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
+  "CMakeFiles/mprpc.dir/rpcheader.pb.cc.o.d"
   "CMakeFiles/mprpc.dir/rpcprovider.cc.o"
   "CMakeFiles/mprpc.dir/rpcprovider.cc.o.d"
 )

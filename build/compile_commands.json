@@ -11,6 +11,11 @@
 },
 {
   "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
+  "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/rpcheader.pb.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/rpcheader.pb.cc",
+  "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/rpcheader.pb.cc"
+},
+{
+  "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
   "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/rpcprovider.cc",
   "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/rpcprovider.cc"
 },

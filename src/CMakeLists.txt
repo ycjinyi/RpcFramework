@@ -1,5 +1,6 @@
 #把当前路径.下的所有文件放入SRC_LIST
-aux_source_directory(. SRC_LIST)
+#aux_source_directory(. SRC_LIST)
+set(SRC_LIST mprpcapplication.cc mprpcconfig.cc rpcheader.pb.cc rpcprovider.cc)
 #输出动态库
 #add_library(mprpc SHARED ${SRC_LIST})
 #输出静态库

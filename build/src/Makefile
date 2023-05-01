@@ -178,6 +178,30 @@ mprpcconfig.cc.s:
 	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.s
 .PHONY : mprpcconfig.cc.s
 
+rpcheader.pb.o: rpcheader.pb.cc.o
+.PHONY : rpcheader.pb.o
+
+# target to build an object file
+rpcheader.pb.cc.o:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
+.PHONY : rpcheader.pb.cc.o
+
+rpcheader.pb.i: rpcheader.pb.cc.i
+.PHONY : rpcheader.pb.i
+
+# target to preprocess a source file
+rpcheader.pb.cc.i:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.i
+.PHONY : rpcheader.pb.cc.i
+
+rpcheader.pb.s: rpcheader.pb.cc.s
+.PHONY : rpcheader.pb.s
+
+# target to generate assembly for a file
+rpcheader.pb.cc.s:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.s
+.PHONY : rpcheader.pb.cc.s
+
 rpcprovider.o: rpcprovider.cc.o
 .PHONY : rpcprovider.o
 
@@ -217,6 +241,9 @@ help:
 	@echo "... mprpcconfig.o"
 	@echo "... mprpcconfig.i"
 	@echo "... mprpcconfig.s"
+	@echo "... rpcheader.pb.o"
+	@echo "... rpcheader.pb.i"
+	@echo "... rpcheader.pb.s"
 	@echo "... rpcprovider.o"
 	@echo "... rpcprovider.i"
 	@echo "... rpcprovider.s"
