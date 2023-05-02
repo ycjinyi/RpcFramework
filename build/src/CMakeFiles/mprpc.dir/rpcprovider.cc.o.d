@@ -332,7 +332,7 @@ src/CMakeFiles/mprpc.dir/rpcprovider.cc.o: \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
  /usr/local/include/google/protobuf/stubs/once.h \
- /home/ycjinyi/2023/mprpc/github/mprpc/src/rpcheader.pb.h \
+ /home/ycjinyi/2023/mprpc/github/mprpc/src/include/rpcheader.pb.h \
  /usr/local/include/google/protobuf/io/coded_stream.h \
  /usr/include/c++/11/climits \
  /usr/local/include/google/protobuf/stubs/logging.h \

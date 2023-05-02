@@ -82,14 +82,17 @@ clean: example/clean
 
 # Recursive "all" directory target.
 example/all: example/callee/all
+example/all: example/caller/all
 .PHONY : example/all
 
 # Recursive "preinstall" directory target.
 example/preinstall: example/callee/preinstall
+example/preinstall: example/caller/preinstall
 .PHONY : example/preinstall
 
 # Recursive "clean" directory target.
 example/clean: example/callee/clean
+example/clean: example/caller/clean
 .PHONY : example/clean
 
 #=============================================================================
@@ -106,6 +109,21 @@ example/callee/preinstall:
 # Recursive "clean" directory target.
 example/callee/clean: example/callee/CMakeFiles/provider.dir/clean
 .PHONY : example/callee/clean
+
+#=============================================================================
+# Directory level rules for directory example/caller
+
+# Recursive "all" directory target.
+example/caller/all: example/caller/CMakeFiles/user.dir/all
+.PHONY : example/caller/all
+
+# Recursive "preinstall" directory target.
+example/caller/preinstall:
+.PHONY : example/caller/preinstall
+
+# Recursive "clean" directory target.
+example/caller/clean: example/caller/CMakeFiles/user.dir/clean
+.PHONY : example/caller/clean
 
 #=============================================================================
 # Directory level rules for directory src
@@ -129,12 +147,12 @@ src/clean: src/CMakeFiles/mprpc.dir/clean
 src/CMakeFiles/mprpc.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target mprpc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target mprpc"
 .PHONY : src/CMakeFiles/mprpc.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mprpc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mprpc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mprpc.dir/rule
@@ -155,12 +173,12 @@ src/CMakeFiles/mprpc.dir/clean:
 example/callee/CMakeFiles/provider.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=6,7,8 "Built target provider"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=7,8,9 "Built target provider"
 .PHONY : example/callee/CMakeFiles/provider.dir/all
 
 # Build rule for subdir invocation for target.
 example/callee/CMakeFiles/provider.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/provider.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 0
 .PHONY : example/callee/CMakeFiles/provider.dir/rule
@@ -173,6 +191,32 @@ provider: example/callee/CMakeFiles/provider.dir/rule
 example/callee/CMakeFiles/provider.dir/clean:
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/clean
 .PHONY : example/callee/CMakeFiles/provider.dir/clean
+
+#=============================================================================
+# Target rules for target example/caller/CMakeFiles/user.dir
+
+# All Build rule for target.
+example/caller/CMakeFiles/user.dir/all: src/CMakeFiles/mprpc.dir/all
+	$(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/user.dir/build.make example/caller/CMakeFiles/user.dir/depend
+	$(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/user.dir/build.make example/caller/CMakeFiles/user.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles --progress-num=10,11,12 "Built target user"
+.PHONY : example/caller/CMakeFiles/user.dir/all
+
+# Build rule for subdir invocation for target.
+example/caller/CMakeFiles/user.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/caller/CMakeFiles/user.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ycjinyi/2023/mprpc/github/mprpc/build/CMakeFiles 0
+.PHONY : example/caller/CMakeFiles/user.dir/rule
+
+# Convenience name for target.
+user: example/caller/CMakeFiles/user.dir/rule
+.PHONY : user
+
+# clean rule for target.
+example/caller/CMakeFiles/user.dir/clean:
+	$(MAKE) $(MAKESILENT) -f example/caller/CMakeFiles/user.dir/build.make example/caller/CMakeFiles/user.dir/clean
+.PHONY : example/caller/CMakeFiles/user.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

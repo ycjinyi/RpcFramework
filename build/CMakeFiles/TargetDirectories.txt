@@ -8,3 +8,6 @@
 /home/ycjinyi/2023/mprpc/github/mprpc/build/example/callee/CMakeFiles/provider.dir
 /home/ycjinyi/2023/mprpc/github/mprpc/build/example/callee/CMakeFiles/edit_cache.dir
 /home/ycjinyi/2023/mprpc/github/mprpc/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/ycjinyi/2023/mprpc/github/mprpc/build/example/caller/CMakeFiles/user.dir
+/home/ycjinyi/2023/mprpc/github/mprpc/build/example/caller/CMakeFiles/edit_cache.dir
+/home/ycjinyi/2023/mprpc/github/mprpc/build/example/caller/CMakeFiles/rebuild_cache.dir

@@ -80,10 +80,11 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
         std::cout << "incomplete header_size data!" << std::endl;
         return;
     }
-    for(int i = 3; i >= 0; --i) {
-        header_size <<= 8;
-        header_size += buf[i];
-    }
+    // for(int i = 3; i >= 0; --i) {
+    //     header_size <<= 8;
+    //     header_size += buf[i];
+    // }
+    header_size = *((const uint32_t*) buf.data());
     //2、protobuf反序列化
     if(buf.size() < 4 + header_size) {
         std::cout << "incomplete header data!" << std::endl;
