@@ -18,7 +18,7 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         const google::protobuf::ServiceDescriptor* sdp = method->service();
         std::string args;
         if(!request->SerializeToString(&args)) {
-            std::cout << "Serialize args failed!" << std::endl;
+            controller->SetFailed("Serialize args failed!");
             return;
         }
         //构造rpcheader
@@ -28,7 +28,7 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         header.set_arg_size(args.size());
         std::string header_str;
         if(!header.SerializeToString(&header_str)) {
-            std::cout << "Serialize rpc header failed!" << std::endl;
+            controller->SetFailed("Serialize rpc header failed!");
             return;
         }
         //构造长度
@@ -46,7 +46,7 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         //3、TCP编程连接rpc服务器
         int clientfd = socket(AF_INET, SOCK_STREAM, 0);
         if(clientfd == -1) {
-            std::cout << "create client fd failed!" << std::endl;
+            controller->SetFailed("create client fd failed!");
             return;
         }
         sockaddr_in addr;
@@ -56,14 +56,14 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         addr.sin_addr.s_addr = inet_addr(ip.c_str());
         int ret = connect(clientfd, (sockaddr*) &addr, sizeof(addr));
         if(ret == -1) {
-            std::cout << "can not connect rpc server!" << std::endl;
+            controller->SetFailed("can not connect rpc server!");
             close(clientfd);
             return;
         }
         //4、将构造的数据发送给服务器
         ret = send(clientfd, query.c_str(), query.size(), 0);
         if(ret == -1) {
-            std::cout << "send to rpc server failed!" << std::endl;
+            controller->SetFailed("send to rpc server failed!");
             close(clientfd);
             return;
         }
@@ -71,13 +71,13 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         char buf[1024] = {0};
         ret = recv(clientfd, buf, sizeof buf, 0);
         if(ret == -1) {
-            std::cout << "recv from rpc server failed!" << std::endl;
+            controller->SetFailed("recv from rpc server failed!");
             close(clientfd);
             return;
         }
         //反序列化消息
         if(!response->ParseFromString(std::string(buf, ret))) {
-            std::cout << "response parse from string failed!" << std::endl;
+            controller->SetFailed("response parse from string failed!");
             close(clientfd);
             return;
         }

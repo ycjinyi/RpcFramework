@@ -178,6 +178,30 @@ mprpcconfig.cc.s:
 	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.s
 .PHONY : mprpcconfig.cc.s
 
+mprpccontroller.o: mprpccontroller.cc.o
+.PHONY : mprpccontroller.o
+
+# target to build an object file
+mprpccontroller.cc.o:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o
+.PHONY : mprpccontroller.cc.o
+
+mprpccontroller.i: mprpccontroller.cc.i
+.PHONY : mprpccontroller.i
+
+# target to preprocess a source file
+mprpccontroller.cc.i:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpccontroller.cc.i
+.PHONY : mprpccontroller.cc.i
+
+mprpccontroller.s: mprpccontroller.cc.s
+.PHONY : mprpccontroller.s
+
+# target to generate assembly for a file
+mprpccontroller.cc.s:
+	cd /home/ycjinyi/2023/mprpc/github/mprpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpccontroller.cc.s
+.PHONY : mprpccontroller.cc.s
+
 rpcchannel.o: rpcchannel.cc.o
 .PHONY : rpcchannel.o
 
@@ -265,6 +289,9 @@ help:
 	@echo "... mprpcconfig.o"
 	@echo "... mprpcconfig.i"
 	@echo "... mprpcconfig.s"
+	@echo "... mprpccontroller.o"
+	@echo "... mprpccontroller.i"
+	@echo "... mprpccontroller.s"
 	@echo "... rpcchannel.o"
 	@echo "... rpcchannel.i"
 	@echo "... rpcchannel.s"

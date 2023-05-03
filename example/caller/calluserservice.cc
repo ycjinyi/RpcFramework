@@ -2,6 +2,7 @@
 #include "user.pb.h"
 #include "mprpcapplication.hpp"
 #include "rpcchannel.hpp"
+#include "mprpccontroller.hpp"
 #include <google/protobuf/service.h>
 
 
@@ -15,8 +16,13 @@ int main(int argc, char** argv) {
     fixbug::LoginResponse response;
     request.set_name("ycjinyi");
     request.set_pwd("123456");
+    MpRpcController controller;
     //同步的调用过程，返回时表明已经收到了来自rpc服务器的数据
-    stub.Login(nullptr, &request, &response, nullptr);//实际上是调用->MpRpcChannel::CallMethod
+    stub.Login(&controller, &request, &response, nullptr);//实际上是调用->MpRpcChannel::CallMethod
+    if(controller.Failed()) {
+        std::cout << controller.ErrorText() << std::endl;
+        return -1;
+    }
     //获取响应数据
     if(response.result().errcode() == 1) {
         std::cout << "response error: " << response.result().errmsg() << std::endl;

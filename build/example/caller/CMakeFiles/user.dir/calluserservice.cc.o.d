@@ -290,4 +290,5 @@ example/caller/CMakeFiles/user.dir/calluserservice.cc.o: \
  /usr/include/c++/11/cassert /usr/local/include/google/protobuf/service.h \
  /home/ycjinyi/2023/mprpc/github/mprpc/src/include/mprpcapplication.hpp \
  /home/ycjinyi/2023/mprpc/github/mprpc/src/include/mprpcconfig.hpp \
- /home/ycjinyi/2023/mprpc/github/mprpc/src/include/rpcchannel.hpp
+ /home/ycjinyi/2023/mprpc/github/mprpc/src/include/rpcchannel.hpp \
+ /home/ycjinyi/2023/mprpc/github/mprpc/src/include/mprpccontroller.hpp
