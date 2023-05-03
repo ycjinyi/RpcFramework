@@ -30,6 +30,11 @@
   "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpccontroller.cc"
 },
 {
+  "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/src",
+  "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/mprpc.dir/logger.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/src/logger.cc",
+  "file": "/home/ycjinyi/2023/mprpc/github/mprpc/src/logger.cc"
+},
+{
   "directory": "/home/ycjinyi/2023/mprpc/github/mprpc/build/example/callee",
   "command": "/usr/bin/g++  -I/home/ycjinyi/2023/mprpc/github/mprpc/src/include -I/home/ycjinyi/2023/mprpc/github/mprpc/example -g -o CMakeFiles/provider.dir/userservice.cc.o -c /home/ycjinyi/2023/mprpc/github/mprpc/example/callee/userservice.cc",
   "file": "/home/ycjinyi/2023/mprpc/github/mprpc/example/callee/userservice.cc"

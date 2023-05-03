@@ -6,6 +6,7 @@
 #include <functional>
 #include "google/protobuf/descriptor.h"
 #include "rpcheader.pb.h"
+#include "logger.hpp"
 
 //rpc框架对外提供的发布服务的函数接口
 void RpcProvider::notifyService(google::protobuf::Service* service) {
@@ -14,14 +15,16 @@ void RpcProvider::notifyService(google::protobuf::Service* service) {
     const google::protobuf::ServiceDescriptor* sdp = service->GetDescriptor();
     //通过ServiceDescriptor可以获取service的名称
     std::string serviceName = sdp->name();
-    std::cout << "service name: " << serviceName << std::endl;
+    //std::cout << "register service name: " << serviceName << std::endl;
+    LOG_INFO("register service name: %s", serviceName.c_str());
     //还可以获取对应的方法个数
     int cnt = sdp->method_count();
     //逐一获取方法
     for(int i = 0; i < cnt; ++i) {
         const google::protobuf::MethodDescriptor* mdp = sdp->method(i);
         std::string methodName = mdp->name();
-        std::cout << "method name: " << methodName << std::endl;
+        //std::cout << "method name: " << methodName << std::endl;
+        LOG_INFO("register method name: %s", methodName.c_str());
         //保存对应的方法
         sInfo._methodMap.insert({methodName, mdp});
     }
@@ -52,6 +55,7 @@ void RpcProvider::run() {
     //运行
     server.start();
     std::cout << "RpcServer start at ip: " << ip << " port: " << port << std::endl;
+    LOG_INFO("RpcServer start at ip: %s port: %d", ip.c_str(), port);
     //循环运行
     _evLoop.loop();
 }
@@ -78,6 +82,7 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
     uint32_t header_size = 0;
     if(buf.size() < 4) {
         std::cout << "incomplete header_size data!" << std::endl;
+        LOG_ERROR("incomplete header_size data!");
         return;
     }
     // for(int i = 3; i >= 0; --i) {
@@ -88,11 +93,13 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
     //2、protobuf反序列化
     if(buf.size() < 4 + header_size) {
         std::cout << "incomplete header data!" << std::endl;
+        LOG_ERROR("incomplete header data!");
         return;
     }
     mprpc::RpcHeader header;
     if(!header.ParseFromString(buf.substr(4, header_size))) {
         std::cout << "parse header failed!" << std::endl;
+        LOG_ERROR("incomplete header data!");
         return;
     }
     std::string service_name(header.service_name());
@@ -101,6 +108,7 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
     //3、获取参数
     if(buf.size() < 4 + header_size + arg_size) {
         std::cout << "incomplete arg data!" << std::endl;
+        LOG_ERROR("incomplete header data!");
         return;
     }
     std::string args(buf.substr(4 + header_size, arg_size));
@@ -116,12 +124,14 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
     auto it = _serviceMap.find(service_name);
     if(it == _serviceMap.end()) {
         std::cout << "service: " << service_name << " not exist!" << std::endl;
+        LOG_ERROR("service: %s not exist!", service_name.c_str());
         return;
     }
     //获取method
     auto mit = it->second._methodMap.find(method_name);
     if(mit == it->second._methodMap.end()) {
         std::cout << service_name << "->method: " << method_name << "not exist!" << std::endl;
+        LOG_ERROR("%s->method: %s not exist!", service_name.c_str(), method_name.c_str());
         return;
     }
     //找到service和methodDescriptor
@@ -133,6 +143,7 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn,
     //解析request参数
     if(!request->ParseFromString(args)) {
         std::cout << "parse args failed!" << std::endl;
+        LOG_ERROR("parse args failed!");
         return;
     }
     //指定回调函数
@@ -148,6 +159,7 @@ void RpcProvider::rpcResponseCall(const muduo::net::TcpConnectionPtr& conn,
     std::string response;
     if(!msg->SerializeToString(&response)) {
         std::cout << "response serialize to string failed!" << std::endl;
+        LOG_ERROR("response serialize to string failed!");
         conn->shutdown();
         return;
     }

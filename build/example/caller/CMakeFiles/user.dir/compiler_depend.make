@@ -696,8 +696,11 @@ example/caller/CMakeFiles/user.dir/calluserservice.cc.o: ../example/caller/callu
   /usr/local/include/google/protobuf/service.h \
   ../src/include/mprpcapplication.hpp \
   ../src/include/mprpcconfig.hpp \
-  ../src/include/rpcchannel.hpp
+  ../src/include/rpcchannel.hpp \
+  ../src/include/mprpccontroller.hpp
 
+
+../src/include/mprpccontroller.hpp:
 
 ../src/include/rpcchannel.hpp:
 

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/ycjinyi/2023/mprpc/github/mprpc/src/logger.cc" "src/CMakeFiles/mprpc.dir/logger.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/logger.cc.o.d"
   "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcapplication.cc" "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o.d"
   "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpcconfig.cc" "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o.d"
   "/home/ycjinyi/2023/mprpc/github/mprpc/src/mprpccontroller.cc" "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o.d"
