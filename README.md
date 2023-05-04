@@ -1,4 +1,4 @@
-# RPC-framework
-基于muduo库和protobuf的分布式rpc通信网络框架
+# RPC_Framework
+基于muduo库和protobuf的分布式rpc通信网络框架, 使用zookeeper作为注册中心，为rpc调用者提供服务发现。
 
-![sketch map](https://user-images.githubusercontent.com/71738406/235669608-5c8b4ea7-e934-4911-975a-8daacc4bd006.png)
+![框架](https://user-images.githubusercontent.com/71738406/236225791-52c3a71a-7ad8-43c8-9f52-2b7140c10a5e.png)
