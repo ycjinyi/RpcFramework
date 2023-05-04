@@ -7,7 +7,7 @@
 
 
 int main(int argc, char** argv) {
-    //读取配置文件，包括rpc服务器的ip和端口号
+    //读取配置文件，获取zookeeper服务器的ip和端口号
     MprpcApplication::init(argc, argv);
     //使用stub调用rcp方法，由MpRpcChannel实现数据的序列化和发送以及响应的接收
     fixbug::UserServiceRpc_Stub stub(new MpRpcChannel());

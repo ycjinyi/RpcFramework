@@ -8,6 +8,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include "zookeeperutil.hpp"
 
 void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         google::protobuf::RpcController* controller, 
@@ -38,11 +39,28 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         query += header_str;
         query += args;
         //2、获取rpc服务器配置
-        MprpcApplication* app = MprpcApplication::getInstance();
-        MprpcConfig* config = app->getConfig();
-        std::string ip = config->query("rpcserverip");
-        std::string port_str = config->query("rpcserverport");
-        uint16_t port = atoi(port_str.c_str());
+        // MprpcApplication* app = MprpcApplication::getInstance();
+        // MprpcConfig* config = app->getConfig();
+        // std::string ip = config->query("rpcserverip");
+        // std::string port_str = config->query("rpcserverport");
+        // uint16_t port = atoi(port_str.c_str());
+
+        //从zookeeper查询目标rpc节点
+        Zookeeper zk;
+        if(!zk.start()) {
+            controller->SetFailed("connect to zookeeper server failed!");
+            return;
+        }
+        std::string path("/" + sdp->name() + "/" + method->name());
+        std::string res = zk.getData(path);
+        int idx = res.find(':');
+        if(idx == -1) {
+            controller->SetFailed("data in zookeeper was wrong!");
+            return;
+        }
+        std::string ip = res.substr(0, idx);
+        uint16_t port = atoi(res.substr(idx + 1, res.size() - idx - 1).c_str());
+        
         //3、TCP编程连接rpc服务器
         int clientfd = socket(AF_INET, SOCK_STREAM, 0);
         if(clientfd == -1) {

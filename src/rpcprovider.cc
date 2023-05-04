@@ -7,6 +7,7 @@
 #include "google/protobuf/descriptor.h"
 #include "rpcheader.pb.h"
 #include "logger.hpp"
+#include "zookeeperutil.hpp"
 
 //rpc框架对外提供的发布服务的函数接口
 void RpcProvider::notifyService(google::protobuf::Service* service) {
@@ -56,7 +57,32 @@ void RpcProvider::run() {
     server.start();
     std::cout << "RpcServer start at ip: " << ip << " port: " << port << std::endl;
     LOG_INFO("RpcServer start at ip: %s port: %d", ip.c_str(), port);
-    //循环运行
+
+    //注册服务到zookeeper中
+    Zookeeper zk;
+    if(!zk.start()) {
+        LOG_ERROR("connect to zookeeper server failed!");
+        return;
+    }
+    std::string data = ip + ":" + app->getConfig()->query("rpcserverport");
+    for(auto& service : _serviceMap) {
+        //先创建/service_path节点,该节点永久存在
+        std::string service_path = "/" + service.first;
+        if(!zk.create(service_path, "", 0)) {
+            LOG_ERROR("zookeeper create %s failed!", service_path.c_str());
+            continue;
+        }
+        //再创建/service_path/method节点, 该节点暂时存在, 需要心跳消息
+        for(auto& method : service.second._methodMap) {
+            std::string method_path = service_path + "/" + method.first;
+            if(!zk.create(method_path, data, ZOO_EPHEMERAL)) {
+                LOG_ERROR("zookeeper create %s failed!", method_path.c_str());
+                continue;
+            }
+        }
+    }
+
+    //eventLoop运行
     _evLoop.loop();
 }
 
